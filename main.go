@@ -1,6 +1,10 @@
 package main
 
-import "github.com/mrojasb2000/go-generic/genericlist"
+import (
+	"fmt"
+
+	"github.com/mrojasb2000/go-generic/genericlist"
+)
 
 func main() {
 	glist := genericlist.New[string]()
@@ -10,4 +14,6 @@ func main() {
 	glist.Insert("Francis Doe")
 	glist.Insert("Scolly Doe")
 	glist.Insert("Fox Doe")
+
+	fmt.Printf("Value '%s' for index %d\n", glist.Get(3), 3)
 }
