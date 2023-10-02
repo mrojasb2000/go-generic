@@ -18,12 +18,6 @@ func (l *GenericList[T]) Get(i int) T {
 	if i > len(l.data)-1 {
 		panic("given index is too high")
 	}
-	/*
-		for it := 0; it < len(l.data); it++ {
-			if i == it {
-				return l.data[it]
-			}
-		}*/
 
 	for idx, value := range l.data {
 		if i == idx {
@@ -32,4 +26,16 @@ func (l *GenericList[T]) Get(i int) T {
 	}
 
 	panic("value not found")
+}
+
+func (l *GenericList[T]) Remove(i int) {
+	if i > len(l.data)-1 {
+		panic("given index is too high")
+	}
+
+	for idx := range l.data {
+		if i == idx {
+			l.data = append(l.data[:idx], l.data[idx+1:]...)
+		}
+	}
 }

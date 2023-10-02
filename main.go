@@ -16,4 +16,9 @@ func main() {
 	glist.Insert("Fox Doe")
 
 	fmt.Printf("Value '%s' for index %d\n", glist.Get(3), 3)
+	fmt.Printf("%+v\n", glist)
+
+	glist.Remove(3)
+
+	fmt.Printf("%+v\n", glist)
 }
